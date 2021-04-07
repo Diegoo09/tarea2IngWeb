@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/estilo.css">
+    </head>
+    <body>
+
+        <div id="mensajeEnvio"></div>
+        <form id="formulario" method="post" >
+            <ul>
+                <li>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" maxlength="10" placeholder="nombre" required="true">
+                </li>
+                <li>
+                    <label for="apellido">apellido</label>
+                    <input type="text" id="apelllido" maxlength="10" placeholder="apellido" required="true">
+                </li>
+                <li>
+                    <label for="rut">rut (sin puntos ni guion)</label>
+                    <input type="text" id="rut" pattern="[0-9]{8,9}" maxlength="9" placeholder="rut" required="true">    
+                </li>
+                <li>
+                    <label for="correo">correo</label>
+                    <input type="email" id="email" maxlength="20" placeholder="correo electronico" required="true">
+                </li>
+                <li>
+                    <label for="telefono">telefono</label>
+                    <input type="number" id="telefono" name="telefono[]" maxlength="9" placeholder="telefono" required="true">
+                </li>
+                <li>
+                    <p>
+                        Lenguajes de programacion de interes:<br>
+                        <input type="checkbox" name="opcion[]"  > pyton<br>
+                        <input type="checkbox" name="opcion[]"  > java<br>
+                        <input type="checkbox" name="opcion[]" > typescript<br>
+                        <input type="checkbox" name="opcion[]" > php<br>
+                        <input type="checkbox" name="opcion[]"> c#<br>
+                        <input type="checkbox" name="opcion[]"  > c++
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        nivel de programacion: 
+                        <input type="range" name="rango" required="true">
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        años de experiencia laboral: 
+                        <input type="radio" name="opcion" value="1" required>1
+                        <input type="radio" name="opcion" value="2">2
+                        <input type="radio" name="opcion" value="3">3
+                        <input type="radio" name="opcion" value="1">4
+                        <input type="radio" name="opcion" value="2">5
+                    </p>
+                </li>
+                <li>
+                    <p><label for="texto">Descripcion breve de usted<br></label>
+                        <textarea id="texto" name="descripcion" minlength="1" rows="10" cols="100" maxlength="300" required></textarea>
+                    </p>
+                </li>
+                <li>
+                    <button type="submit" id="enviar" onclick=validar()>enviar datos</button>
+                    <button type="button" id="limpiar" onclick="limpiarForm()">limpiar datos</button>
+                </li>
+
+            </ul>
+        </form>
+        
+        <script src="js/app.js" async defer></script>
+    </body>
+</html>
